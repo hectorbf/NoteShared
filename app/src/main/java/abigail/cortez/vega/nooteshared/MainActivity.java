@@ -3,6 +3,7 @@ package abigail.cortez.vega.nooteshared;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -80,9 +81,19 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
+        Fragment f=null;
+        boolean transaccion=false;
+
         if (id == R.id.nav_Buscar) {
+
+        } else if (id == R.id.nav_Entrar) {
+            f=new Loogin();
+            transaccion=true;
+
             // Handle the camera action
         } else if (id == R.id.nav_agregar) {
+            f=new Agregar_nota();
+            transaccion=true;
 
         } else if (id == R.id.nav_Editar) {
 
@@ -90,8 +101,13 @@ public class MainActivity extends AppCompatActivity
 
         }
 
+        if(transaccion) {
+
+            getSupportFragmentManager().beginTransaction().replace(R.id.contenedor, f).commit();
+        }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+
     }
 }
