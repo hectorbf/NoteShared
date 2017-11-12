@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_Buscar) {
 
         } else if (id == R.id.nav_Entrar) {
-            f=new Loogin();
+            f=new Login();
             transaccion=true;
 
             // Handle the camera action
