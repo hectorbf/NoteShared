@@ -62,7 +62,7 @@ public class RegistrarUsuario extends Fragment {
 
     private void RegistrarUsuario(String nombre, String usuario, String contrasena){
         RequestQueue queue = Volley.newRequestQueue(getActivity().getApplicationContext());
-        String url = "http://10.225.159.203/usuarios/registrar_usu.php?nombre="+nombre+"&usuario="+usuario+"&contrasena="+contrasena;
+        String url = "http://192.168.1.77/usuarios/registrar_usu.php?nombre="+nombre+"&usuario="+usuario+"&contrasena="+contrasena;
 
         StringRequest request = new StringRequest(Request.Method.GET,
                 url,

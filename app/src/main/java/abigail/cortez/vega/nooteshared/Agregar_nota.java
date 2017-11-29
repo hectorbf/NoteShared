@@ -53,16 +53,12 @@ public class Agregar_nota extends Fragment {
         // Inflate the layout for this fragment
         return rootView;
 
-
-
-
-
     }
 
 
     private void Agregar_nota(String titulo, String mensaje){
         RequestQueue queue = Volley.newRequestQueue(getActivity().getApplicationContext());
-        String url = "http://10.225.159.203/usuarios/guardar.php?titulo="+titulo+"&mensaje="+mensaje;
+        String url = "http://192.168.1.77/usuarios/guardar.php?titulo="+titulo+"&mensaje="+mensaje;
 
         StringRequest request = new StringRequest(Request.Method.GET,
                 url,
